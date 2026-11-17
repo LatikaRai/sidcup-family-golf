@@ -75,6 +75,26 @@ nav a{
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+#cursor{
+    width: 15px;
+    height: 15px;
+    background-color: #A0BF2B;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 102;
+    pointer-events: none;
+}
+#cursor-blur{
+    width: 300px;
+    height: 300px;
+    background-color: #A0BF2B;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 1;
+    opacity: 0.4;
+    pointer-events: none;
+}
 /* page 1 */
 .hero{
     width: 100%;
@@ -98,6 +118,8 @@ nav a{
     color: black;
     background-color: rgba(0, 0, 0, 0.35);
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 .hero-content h1{
     font-size: 7rem;
@@ -130,5 +152,209 @@ nav a{
 /* page 2 */
 .infinite-scroll{
     width: 100%;
-    height: 100vh;
+    height: auto;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: auto;
+    position: relative;
+    padding-top: 6vh;
+    z-index: 2;
+}
+
+#scroller{
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
+}
+
+.infinite-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.scroller-in{
+    display: inline-block;
+    animation-name: scroll;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+.scroller-in h4{
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-size: 6rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #95C11E;
+    color: black;
+    transition: all linear 0.2s;
+}
+
+.scroller-in h4:hover{
+    color: #95C11E;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.about-us-page{
+    width: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    padding: 0 5rem;
+}
+
+.about-us{
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-us-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.about-us-content img{
+    height: 27vh;
+    width: 12vw;
+    object-fit: cover;
+    z-index: 10;
+    position: relative;
+    background-color: #95C11E;
+    border-radius: 0.6rem;
+}
+.about-us-content .about-us-detail{
+    width: 50%;
+    text-align: center;
+}
+.about-us-content .about-us-detail h1{
+    font-size: 3.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.about-us-detail p{
+    font-size: 1.13rem;
+    line-height: 1.7rem;
+    margin-top: 2rem;
+}
+.card-cont{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.card{
+    width: 30%;
+    height: 100%;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+.card h3{ 
+    font-weight: 900;
+    text-shadow: 0.2px 0.2px 1px black;
+    padding: 0.8rem 1.5rem;
+}
+
+#card1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(./assets/images/TM-Golf-Bay.webp);
+    display: flex;
+    align-items: end;
+} 
+#card2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(./assets/images/about-us-2.webp);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#card3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(./assets//images/about-us-3.webp);
+    display: flex;
+    align-items: end;
+}
+#card2 h5{
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 0 1.5rem;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: #95C11E;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+.overlay h4{
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.overlay p{
+    font-size: 1rem;
+    color: black;
+    text-transform: none;
+    line-height: 1.6rem;
+    margin-top: 1.1rem;
+}
+.card:hover h3{
+    opacity: 0;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.arrow{
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    transition: all 0.2s ease-in;
+}
+.arrow i{
+    font-size: 2.3rem;
+    color: black;
+    transition: all 0.2s ease-in;
+}
+.arrow:hover{
+    background-color: white;
+}
+.arrow:hover i{
+    color: #95C11E;
+}
+.green-cont{
+    width: 100%;
+    height: 50vh;
+    background-color: #95C11E;
 }

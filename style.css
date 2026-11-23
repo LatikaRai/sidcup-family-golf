@@ -10,7 +10,19 @@ html, body{
     height: 100%;
     width: 100%;
 }
-
+*::selection{
+    background-color: white;
+    color: #95C11E;
+}
+body::-webkit-scrollbar{
+    width: 0.45rem;
+    display: block;
+    background-color: black;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #95C11E;
+    border-radius: 0.2rem;
+}
 /* Regular - 400 */
 @font-face {
     font-family: 'Montserrat';
@@ -421,4 +433,74 @@ nav h4:hover{
     font-weight: 900;
     text-align: center;
     z-index: 2;
+}
+.services{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    z-index: 2;
+    padding: 0 8rem;
+}
+.services h3{
+    width: 100%;
+    text-align: center;
+    font-size: 4.1rem;
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    position: absolute;
+    top: -15%;
+    left: 0;
+}
+.service-cont{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+.service-cards{
+    width: 30%;
+    height: 18vh;
+    border-radius: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+} 
+
+.service-cards h4{
+    width: 100%;
+    height: 100%;
+    background-color: #95C11E;
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    z-index: 5;
+    transition: all 0.4s ease;
+}
+.service-cards img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all 0.4s ease;
+
+}
+.service-cards:hover img{
+    scale: 1;
+}
+.service-cards:hover h4{
+    color: white;
+    background-color: transparent;
+}
+.services:has(.service-cards:hover) h3 {
+    -webkit-text-stroke: 1px #95C11E;
 }

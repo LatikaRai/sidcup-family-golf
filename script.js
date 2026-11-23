@@ -79,7 +79,7 @@ gsap.from(".about-us-content img, .about-us-content .about-us-detail", {
         trigger: ".about-us-page",
         scroller: "body",
         // markers: true,
-        start: "top 35%",
+        start: "top 45%",
         end: "top 50%",
         scrub: 3
     }

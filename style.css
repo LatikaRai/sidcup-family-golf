@@ -405,9 +405,62 @@ nav h4:hover{
     font-weight: 900;
 }
 
-.review{
+.food-n-drink{
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+    position: relative;
+    z-index: 2;
+}
+.image{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.image img{
+    width: 90%;
+    height: 70%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #22A436;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+.food-content{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.food-content h2{
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.food-content p{
+    font-size: 1.13rem;
+    line-height: 1.9rem;
+}
+.food-content button{
+    background-color: black;
+    padding: 1rem 2.2rem;
+    border: 2px solid #95C11E;
+    border-radius: 1.8rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.review{
+    width: 100%;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -416,13 +469,13 @@ nav h4:hover{
 .review .quote-left{
     position: absolute;
     height: 7vh;
-    top: 10rem;
+    top: 6rem;
     left: 15rem;
 }
 .review .quote-right{
     position: absolute;
     height: 7vh;
-    bottom: 10rem;
+    bottom: 6rem;
     right: 15rem;
 }
 .review p{
@@ -436,7 +489,7 @@ nav h4:hover{
 }
 .services{
     width: 100%;
-    height: 35vh;
+    height: 45vh;
     position: relative;
     z-index: 2;
     padding: 0 8rem;
@@ -452,7 +505,7 @@ nav h4:hover{
     color: black;
     -webkit-text-stroke: 1px white;
     position: absolute;
-    top: 2%;
+    top: 13%;
     left: 0;
 }
 .service-cont{

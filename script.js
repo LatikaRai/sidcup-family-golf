@@ -23,6 +23,7 @@ document.addEventListener("mousemove", function (dets) {
   });
 });
 
+// navbar
 gsap.to("nav", {
   backgroundColor: "#000",
   height: "10vh",
@@ -36,6 +37,7 @@ gsap.to("nav", {
   },
 });
 
+// homepage
 gsap.to("main", {
   backgroundColor: "#000000e9",
   scrollTrigger: {
@@ -48,6 +50,28 @@ gsap.to("main", {
   },
 });
 
+const arrowDown = document.querySelector("#arrow-down");
+const arrowCircle = document.querySelector(".arrow-circle");
+
+arrowDown.addEventListener("mouseenter", () => {
+    gsap.to(arrowCircle, {
+        scale: 0.33,
+        backgroundColor: "#95C11E",
+        duration: 0.5,
+        ease: "power2.out"
+    });
+});
+
+arrowDown.addEventListener("mouseleave", () => {
+    gsap.to(arrowCircle, {
+        scale: 1,
+        backgroundColor: "transparent",
+        duration: 0.5,
+        ease: "power2.out"
+    });
+});
+
+// about us
 gsap.from(".about-us-content img, .about-us-content .about-us-detail", {
   y: 90,
   opacity: 0,
@@ -78,6 +102,7 @@ gsap.from(".card-cont .card", {
   },
 });
 
+// review
 gsap.from(".review p", {
   y: 90,
   opacity: 0,
@@ -184,6 +209,7 @@ cursorAnimation(".services-links h3");
 cursorAnimation(".details h3");
 cursorAnimation(".location h3");
 cursorAnimation("nav h4");
+cursorAnimation("#arrow-down")
 
 // food n drink
     let start = 0

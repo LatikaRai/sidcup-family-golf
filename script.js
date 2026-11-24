@@ -59,7 +59,7 @@ navElem.forEach(function(elem){
 }) 
 
 gsap.to("main", {
-    backgroundColor: "#000",
+    backgroundColor: "#000000e9",
     scrollTrigger: {
         trigger: "main",
         scroller: "body",
@@ -141,4 +141,107 @@ gsap.from(".review .quote-right",{
         end: "top 70%",
         scrub: 2
     }
+})
+
+// service page
+const serviceCard = document.querySelectorAll(".service-cards")
+serviceCard.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        gsap.to(cursor, {
+            scale: 4    ,
+            backgroundColor: "transparent",
+            border: "0.5px solid white"
+        })
+    })
+    elem.addEventListener("mouseleave", function(){
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "#A0BF2B",
+            border: "none"
+        })
+    })
+})
+
+gsap.from(".services h3",{
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: {
+        trigger: ".services",
+        scroller: "body",
+        // markers: true,
+        start: "top 95%",
+        end: "top 50%",
+        scrub: 2
+    }
+})
+
+// footer
+const icons = document.querySelectorAll(".socials i")
+icons.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "transparent",
+            border: "0.5px solid white"
+        })
+    })
+    elem.addEventListener("mouseleave", function(){
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "#A0BF2B",
+            border: "none"
+        })
+    })
+})
+const serviceLinks = document.querySelectorAll(".services-links h3")
+serviceLinks.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "transparent",
+            border: "0.5px solid white"
+        })
+    })
+    elem.addEventListener("mouseleave", function(){
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "#A0BF2B",
+            border: "none"
+        })
+    })
+})
+const details = document.querySelectorAll(".details h3")
+details.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "transparent",
+            border: "0.5px solid white"
+        })
+    })
+    elem.addEventListener("mouseleave", function(){
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "#A0BF2B",
+            border: "none"
+        })
+    })
+})
+const getLocation = document.querySelectorAll(".location h3")
+getLocation.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "transparent",
+            border: "0.5px solid white"
+        })
+    })
+    elem.addEventListener("mouseleave", function(){
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "#A0BF2B",
+            border: "none"
+        })
+    })
 })
